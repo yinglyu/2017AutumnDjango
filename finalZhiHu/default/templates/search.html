@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>知乎-搜索结果</title>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="StyleSheet" href="../static/style.css">
+    <script src="/static/myScript.js"></script>
+</head>
+ 
+<body>
+
+<div class="wrapper">
+    <h1>知乎-搜索结果</h1>
+    <hr>
+    <div class="dropdown">
+
+
+        <button type="button" class="btn dropdown-toggle btn-success pull-right" id="dropdownMenu1"
+			data-toggle="dropdown">个人主页<span class="caret"></span>
+        </button>
+        <a href="/home/" type="button" class="btn btn-success pull-right">知乎首页</a>
+
+	<ul class="dropdown-menu pull-right" role="menu" aria-labelledby="dropdownMenu1">
+		<li role="presentation">
+			<a role="menuitem" type="button" tabindex="-1" href="/myprofile/">我的资料</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" type="button" tabindex="-1" href="/myhome/">我的问题</a>
+		</li>
+		<li role="presentation">
+			<a role="menuitem" type="button" tabindex="-1" href="/myanswer/">我的回答</a>
+		</li>
+        <li role="presentation">
+			<a role="menuitem" type="button" tabindex="-1" href="/myfocusedhome/">我的关注</a>
+		</li>
+        <li role="presentation">
+			<a role="menuitem" type="button" tabindex="-1" href="/mynewanswer/">新消息</a>
+		</li>
+		<li role="presentation" class="divider"></li>
+		<li role="presentation">
+			<a role="menuitem" type="button" tabindex="-1" href="/logout/" >退出</a>
+		</li>
+	</ul>
+    <form action="/search/" method="POST">
+            <table >
+                {% csrf_token %}
+                <tr>
+                    <th>搜索:</th>
+                    <th><input type="text" name="question_to_search"  id="search" value="" size="20"></th>
+                    <th><button type="submit" class="btn btn-xs btn-success"  onclick="return checkSearch()">查找(search)</button><th>
+                    <th><span id="searchnt" style="text-size:14pt;color:red;"></span></th>
+                </tr>
+
+            </table>
+    </form>
+
+   <form action="/home/" method="POST">
+            <table >
+                {% csrf_token %}
+                <tr>
+                    <th>提问:</th>
+                    <th><input type="text" name="question_to_add"  id="question" value="" size="20"></th>
+                    <th><button type="submit" class="btn btn-xs btn-success"  onclick="return checkQuestion()">提问(add)</button><th>
+                   <th><span id="questionnt" style="text-size:14pt;color:red;"></span></th>
+                </tr>
+
+            </table>
+   </form>
+
+
+
+    </div>
+
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th class="text-center" style="width: 80%">问题</th>
+            <th class="text-center" style="width: 20%">发布者</th>
+        </tr>
+            </thead>
+        <tbody>
+          {% for question in questionlist %}
+                        <tr>
+                            <td>{{ question.title}}</td>
+                            <td>{{ question.user }}</td>
+                            <td >
+                <td class="text-center">
+                    <a type="button" class="btn btn-xs btn-success" href="/question/?question={{ question }}">查看</a>
+                        </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table> 
+
+</div>
+
+</body>
+</html>

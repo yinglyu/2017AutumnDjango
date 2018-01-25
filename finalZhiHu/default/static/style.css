@@ -1,0 +1,55 @@
+input[type="text"]
+{
+    margin: auto;
+	width:150px;
+
+	margin-bottom:10px;
+	background-color:#e0ffff;
+	font-size:1em
+}
+input[type="password"]
+{
+    margin: auto;
+	width:150px;
+
+	background-color:#e0ffff;
+	font-size:1em
+}
+input[type="button"]
+{
+    margin: auto;
+	width:150px;
+	font-size:1em;
+	display:block;
+	margin-left:125px;
+}
+
+
+
+.hot
+{
+    color:#000000;
+    background-color:#CD96CD;
+}
+.rowcenter {
+
+    margin: auto;
+    width: 70%;
+}
+
+.center {
+
+    margin: auto;
+    padding: 20px 0;
+    width: 50%;
+}
+
+.rowleft {
+    float:left;
+    width: 60%;
+}
+
+.rowright{
+    float:right;
+    width: 60%;
+}

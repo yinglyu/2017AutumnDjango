@@ -1,0 +1,14 @@
+吕滢 2015211514
+李子茜 2015211516
+Home	知乎首页	李子茜
+Login	登录页面	吕滢
+Logup	注册界面	吕滢
+Question	问题界面	吕滢
+Search	搜索界面	李子茜
+Myhome	个人主页	吕滢
+myanswer	我的回答	李子茜
+Myfocusedhome	我的关注	李子茜
+Myprofile	我的简介	吕滢
+Editanswer	编辑回答界面	李子茜
+Editquestion	编辑问题界面	李子茜
+贡献 吕滢50% 李子茜50%
