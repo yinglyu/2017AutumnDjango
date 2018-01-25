@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>添加新的联系人</title>
+    {% load staticfiles %}
+	<link rel="StyleSheet" href="/static/style.css">
+    <link rel="StyleSheet" href="../static/bootstrap.min.css">
+	<script src="/static/myScript.js"></script>
+</head>
+
+<body>
+	<div class="center">
+        <form action="/update/" method="POST">
+
+        <h2>New</h2>
+
+            <input type="hidden" name="id"  value="{{ con.id }}" size="20">
+
+            {% csrf_token %}
+        <table >
+
+            <tr>
+                <th>姓名(name):</th>
+                <th><input type="text" name="name" id="name" value="{{ con.name }}" size="20"></th>
+                <th><span id="nament" style="text-size:14pt;color:red;"></span></th>
+            </tr>
+            <tr>
+                <th>电话(tel):</th>
+                <th><input type="text" name="tel" id="tel" value="{{ con.tel }}" size="20"></th>
+                <th><span id="telnt" style="text-size:14pt;color:red;"></span></th>
+            </tr>
+            <tr>
+                <th>邮箱(email):</th>
+                <th><input type="text" name="email" id="email" value="{{ con.email }}" size="20" ></th>
+                <th><span id="emailnt" style="text-size:14pt;color:red;">  </span></th>
+            </tr>
+            <tr>
+                <th>住址(address):</th>
+                <th><input type="text" name="addr" id="addr"  value="{{ con.addr }}" size="20"></th>
+                <th><span id="addrnt" style="text-size:14pt;color:red;"></span></th>
+            </tr>
+            <tr>
+                <th>QQ:</th>
+                <th><input type="text" name="QQnum" id="QQnum" value="{{ con.QQnum }}" size="20"></th>
+                <th><span id=QQnt style="text-size:14pt;color:red;" ></span></th>
+            </tr>
+        </table>
+        <div class="rowcenter">
+            <button type="submit" class="btn btn-xs btn-success" onclick="return checkNewContect()" >修改</button>
+
+            <button type="reset"  class="btn btn-xs btn-danger" onclick="location.href='/'">取消</button>
+        </div>
+	 </form>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+input[type="text"]
+{
+    margin: auto;
+	width:150px;
+
+	margin-bottom:10px;
+	background-color:#e0ffff;
+	font-size:1em
+}
+input[type="password"]
+{
+    margin: auto;
+	width:150px;
+
+	background-color:#e0ffff;
+	font-size:1em
+}
+input[type="button"]
+{
+    margin: auto;
+	width:150px;
+	font-size:1em;
+	display:block;
+	margin-left:125px;
+}
+
+.rowcenter {
+
+    margin: auto;
+
+    width: 50%;
+}
+
+.center {
+
+    margin: auto;
+    padding: 70px 0;
+    width: 50%;
+}
+
+
+
+tr{
+    margin: auto;
+    width: 50%;
+}
+h2{
+    margin: auto;
+    width: 50%;
+}
+body {
+	font-size:100%;
+	background-color:#CCFFFF;
+}
+
+#contacts
+{
+	width:100%;
+	border-collapse:collapse;
+}
+#contacts td, #contacts th
+{
+	font-size:1em;
+	border:1px solid #CCFFFF;
+	padding:3px 7px 2px 7px;
+}
+#contacts th
+{
+	font-size:1.1em;
+	text-align:left;
+	padding-top:5px;
+	padding-bottom:4px;
+	background-color:#87CEEB;
+	color:#ffffff;
+}
+#contacts tr.alt td
+{
+	color:#000000;
+	background-color:#87CEEB;
+}

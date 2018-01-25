@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"> 
+	<title>登录界面</title>
+    {% load staticfiles %}
+	<link rel="StyleSheet" href="../static/style.css">
+    <link rel="StyleSheet" href="../static/bootstrap.min.css">
+
+	<script src="/static/myScript.js"></script>
+</head>
+
+<body>
+	<div class="center">
+
+        <h2 >Welcome <span style="color:blue;font-weight:bold" id="namec"></span>  </h2>
+        <form action="/login/" name="input"  method="POST">
+            <table>
+
+                {% csrf_token %}
+        　　　　	<tr>
+                    <th>用户名(name):</th>
+                    <th><input type="text" name="name"  size="48" id="fname" placeholder="django1/django2" onkeyup="return listen_name()"></th>
+                </tr>
+    　　　　		<tr>
+                    <th>密码(password):</th>
+                    <th><input type="password" name="pswd"  placeholder="2018admin" value="2018admin" id="password1"></th>
+                    <th><span id="pswdnt" style="text-size:14pt;color:red;"></span></th>
+                </tr>
+
+　　　　		</table>
+            <div class="rowcenter">
+                <button type="submit" class="btn btn-xs btn-success"  size="48"  id="login" onclick="return check()">登录(login)</button>
+            </div>
+
+        </form>
+
+	</div>
+</body>
+
+</html>

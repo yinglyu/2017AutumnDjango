@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>联系人列表</title>
+    {% load staticfiles %}
+ 	<link rel="StyleSheet" href="../static/style.css">
+    <link rel="StyleSheet" href="../static/bootstrap.min.css">
+    <script src="/static/myScript.js"></script>
+</head>
+
+<body>
+	<div class="center">
+	<h2>联系人</h2>
+        <form action="#" method="POST">
+            <table >
+                {% csrf_token %}
+                <tr>
+                    <th>姓名(name):</th>
+                    <th><input type="text" name="name"  id="name" value="" size="20"></th>
+
+                    <th><button type="submit" class="btn btn-xs btn-success" size="48" onclick="return checkSearch()">查找(search)</button><th>
+                    <th><span id="nament" style="text-size:14pt;color:red;"></span></th>
+                </tr>
+
+            </table>
+        </form>
+
+        <table id="contacts">
+
+        <thead>
+        <tr>
+ 		<th>姓名</th>
+	 	<th>电话</th>
+	  	<th>邮箱</th>
+	 	<th>地址</th>
+	  	<th>QQ</th>
+
+        <th>操作</th>
+        </tr>
+        </thead>
+
+                    <tbody>
+                    {% for cont in contact %}
+                        <tr>
+                            <td>{{ cont.name }}</td>
+                            <td>{{ cont.tel }}</td>
+                            <td>{{ cont.email }}</td>
+                            <td>{{ cont.addr }}</td>
+                            <td>{{ cont.QQnum }}</td>
+
+                            <td >
+                                <a type="button" class="btn btn-xs btn-success" href="/update/?conid={{ cont.id }}">编辑  (edit)</a>
+                                <a type="button" class="btn btn-xs btn-danger" href="/del/?conid={{ cont.id }}">删除(delete)</a>
+
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                     </tbody>
+
+	</table>
+    <div class = "rowcenter">
+
+        <a type="button" class="btn btn-xs btn-success"  href="/add/" > 增加(add)</a>
+        <a type="button" class="btn btn-xs btn-danger" href="/logout/">退出(logout)</a>
+
+    </div >
+
+	</div >
+
+
+</body>
+</html>
