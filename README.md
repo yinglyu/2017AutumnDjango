@@ -2,11 +2,9 @@
 # 2017AutumnDjango
 Network Programming Technology
 
-Two lesson required project.
+Two required project assginment, using django on python.
 
-Using django on python.
-
-You can run the project on your own computer.
+You need to install python and django on you computer.
 
 Under the root of each project.
 
